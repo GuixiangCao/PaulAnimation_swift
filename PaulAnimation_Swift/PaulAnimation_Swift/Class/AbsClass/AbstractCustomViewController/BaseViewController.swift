@@ -30,4 +30,56 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         automaticallyAdjustsScrollViewInsets = false
         
     }
+    
+    // MARK: -- Private methods --
+    
+    private func initViewController(){
+        let width  = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
+        
+        // backgroundView config.
+        do{
+            let config                    = ControllerBaseViewConfig()
+            config.backgroundColor        = UIColor.white
+            config.exist                  = true
+            config.frame                  = CGRect(x: 0, y: 0, width: width, height: height)
+            viewConfigs[backgroundViewId] = config
+        }
+        
+        // contentView config
+        do{
+            let config                    = ControllerBaseViewConfig()
+            config.backgroundColor        = UIColor.clear
+            config.exist                  = true
+            config.frame                  = CGRect(x: 0, y: 0, width: width, height: height - 64)
+            viewConfigs[contentViewId]    = config
+        }
+        
+        // titView config
+        do{
+            let config                    = ControllerBaseViewConfig()
+            config.backgroundColor        = UIColor.clear
+            config.exist                  = true
+            config.frame                  = CGRect(x: 0, y: 64, width: width, height: 64)
+            viewConfigs[titleViewId]      = config
+        }
+        
+        // loadingView config
+        do{
+            let config                     = ControllerBaseViewConfig()
+            config.backgroundColor         = UIColor.clear
+            config.exist                   = true
+            config.frame                   = CGRect(x:0, y:64, width:width, height:height - 64)
+            viewConfigs[loadingViewAreaId] = config
+        }
+        
+        // windowView config
+        do{
+            let config                     = ControllerBaseViewConfig()
+            config.exist                   = true
+            config.backgroundColor         = UIColor.clear
+            config.frame                   = CGRect(x:0, y:0, width:width, height:height)
+            viewConfigs[windowAreaViewId]  = config
+        }
+    }
 }

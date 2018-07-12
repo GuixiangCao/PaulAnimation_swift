@@ -10,7 +10,7 @@ import UIKit
 
 class ControllerBaseViewConfig: NSObject {
     
-    var background : UIColor?
-    var frame      : CGRect?
-    var exist      : Bool = true
+    var backgroundColor : UIColor?
+    var frame           : CGRect?
+    var exist           : Bool = true
 }
